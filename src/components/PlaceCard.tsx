@@ -1,6 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
+import Image from "next/image";
 import type { Place } from "@/types";
 
 interface PlaceCardProps {
@@ -34,16 +35,17 @@ const PlaceCard = forwardRef<HTMLDivElement, PlaceCardProps>(
             : "shadow-sm hover:shadow-md"
         }`}
       >
-        {/* Hero image area with category-based gradient */}
-        <div className="relative h-36 overflow-hidden bg-gradient-to-br from-pnw-sage/40 to-pnw-sand">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-4xl opacity-30">
-              {place.category === "restaurant" ? "🍽" :
-               place.category === "park" ? "🌲" : "⭐"}
-            </span>
-          </div>
+        {/* Hero image */}
+        <div className="relative h-44 overflow-hidden bg-pnw-sand">
+          <Image
+            src={`/images/places/${place.id}.jpg`}
+            alt={place.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 440px"
+          />
           {/* Number badge */}
-          <span className="absolute top-3 left-3 bg-pnw-forest text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow">
+          <span className="absolute top-3 left-3 bg-pnw-forest text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-md z-10">
             {index + 1}
           </span>
         </div>
