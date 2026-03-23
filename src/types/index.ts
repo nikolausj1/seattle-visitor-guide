@@ -19,16 +19,12 @@ export interface Place {
 export const CATEGORIES = [
   { value: "all", label: "All" },
   { value: "restaurant", label: "Restaurants" },
-  { value: "bar", label: "Bars & Drinks" },
-  { value: "coffee", label: "Coffee" },
   { value: "park", label: "Parks & Outdoors" },
   { value: "activity", label: "Activities & Sightseeing" },
 ] as const;
 
 export type CategoryValue =
   | "restaurant"
-  | "bar"
-  | "coffee"
   | "park"
   | "activity";
 

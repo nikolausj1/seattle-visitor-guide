@@ -14,8 +14,6 @@ interface PlaceCardProps {
 
 const categoryLabels: Record<string, string> = {
   restaurant: "Restaurant",
-  bar: "Bar & Drinks",
-  coffee: "Coffee",
   park: "Parks & Outdoors",
   activity: "Activity & Sightseeing",
 };
@@ -41,8 +39,6 @@ const PlaceCard = forwardRef<HTMLDivElement, PlaceCardProps>(
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-4xl opacity-30">
               {place.category === "restaurant" ? "🍽" :
-               place.category === "bar" ? "🍸" :
-               place.category === "coffee" ? "☕" :
                place.category === "park" ? "🌲" : "⭐"}
             </span>
           </div>
